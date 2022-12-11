@@ -1,0 +1,451 @@
+body {
+    max-width: 100vw;
+    padding: 0px;
+    margin: 0px;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("./OpenSans-VariableFont_wdth\,wght.ttf");
+    font-family: "Poppins";
+    src: url("../solution/Poppins-Medium.ttf");
+}
+
+header {
+    max-width: 100%; /*mejor colocar max-width.. con eso no me salgo del margen, pero primero diseñar todo el div con width del 100% luego si poner max width */
+    background-image: url("images/bg-hero-desktop.svg");
+    display: inline-block;
+    margin: 4% 6% 5% 6%;
+    font-family: "Poppins";
+}
+
+header .logo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* este hace que los elementos se separen y cada quien vaya a su esquina*/
+}
+
+.logo img {
+    width: 12%;
+    height: 25px;
+}
+
+.logo button {
+    width: 12%;  /* el tamaño de los botones  si ponerlo en pixeles por que se distorciona mucho al cambiar tamaño de screen*/
+    height: 35px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: white;
+    border-style: none;
+    cursor: url("pointer.png"), auto;
+    filter: drop-shadow( 0px 1px 2px rgb(180, 179, 179));/* con este creo el efecto en el boton*/
+}
+
+.heading {
+    display: inline-flex;
+    margin: 4% 0% ;
+}
+
+.heading .text {
+    width: 40%;
+    padding: 6% 10% 0% 0%;
+    font-weight: 600;
+}
+
+ .text h1 {
+    font-size: 40px;
+}
+
+.text p {
+    font-weight: 400;
+}
+
+.text button, nav button {
+    margin-top: 3%;
+    width: 55%;  /* el tamaño de los botones  si ponerlo en pixeles por que se distorciona mucho al cambiar tamaño de screen*/
+    height: 10%;
+    color: white;
+    font-weight: 600;
+    background-color: hsl(322, 100%, 66%);
+    border-radius: 25px;
+    border-style: none;
+} /* agrupar siempre codigo similar y lo que cambia lo hago en otro selector*/
+
+.heading .headerimg {
+    width: 65%;
+}
+
+.headerimg img {
+    width: 100%;
+}
+
+main{
+    max-width: 100%;
+    background-color: white;
+    margin: 2% 6% 7% 6%;
+    font-family: "Open Sans";
+}
+
+main .fea1 , .fea2, .fea3{
+    width: 100%;
+    height: 25rem; /*emepzar a utilizar mas rem.. son mas responsive*/
+    display: inline-flex;
+    flex-direction: row-reverse; /* asi invierto el orden de los elementos dentro del div*/
+    margin-bottom: 3%;
+    border: 0.1ch ;
+    border-style:double;
+    border-color: rgb(238, 237, 237);
+} /* cuando vea que hay code que se parece... debo agruparlo... mas simple de leer*/
+
+.fea2 {
+    flex-direction: row;
+}
+
+.fea1 .text1, .fea3 .text3{
+    width: 70%;
+    padding: 5% 2% 5% 10%;
+
+}
+
+.text2 {
+    width: 60%;
+    padding: 5% 2% 5% 1%;
+}
+
+.text1 h2, .text2 h2, .text3 h2 {
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.text1 p, .text2 p, .text3 p {
+    font-size: 19px;
+    font-weight: 500;
+    color: hsl(208, 11%, 55%);
+    line-height: 3ch;
+    letter-spacing: 0.15ch
+}
+
+.img1 img, .img3 img {
+    width: 70%;
+    padding: 5% 3% 5% 22%;
+}
+
+.img2 img {
+    width: 60%;
+    padding: 7% 15% 5% 15%;
+}
+
+nav {
+    position: relative;
+    background-color: white;
+    margin: 0% 25% -5% 25%;
+    width: 50%;
+    text-align: center;
+    border: 0.1ch ;
+    border-style:double;
+    border-color: rgb(238, 237, 237);
+    border-radius: 10px;
+    filter: drop-shadow( 0px 0px 1px rgb(219, 218, 218));/* con este creo el efecto en el boton*/
+    z-index: 9;
+} /* pongo el z index con mas valor donde quiero que se ponga encima mas margin bottom negativo para unir.. creo que debe ir con position relative */
+
+nav h2 {
+    margin-top: 4%;
+    font-size: 40px;
+    font-weight: 700;
+}
+nav button {
+    width: 47%;
+    height: 60px;
+    margin-bottom: 4%;
+    font-size: 18px;
+    border-radius: 30px;
+}
+
+
+.text button:hover, nav button:hover {
+    background: linear-gradient(hsl(322, 92%, 76%),hsl(322, 68%, 77%));  /* asi colco un color de fondo difumindado */
+    cursor: url("pointer.png"), auto;
+} 
+
+footer {
+    width: 100%;
+    margin: 0%;
+    display: inline-flex;
+    background-color: hsl(192, 100%, 9%);
+    color:  hsl(193, 100%, 96%);
+    z-index: 1;
+}
+
+footer .info1 {
+    padding: 10% 2% 7% 6%;
+    width: 40%;
+}
+
+.info1 article img {
+  position: absolute;
+}
+
+.info1 article p {
+    padding-left: 10%;
+    font-size: 18px ;
+  }
+
+  #svg{
+    position: relative;
+    width: 70%;
+    padding-bottom: 10%;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(200deg) brightness(103%) contrast(101%);
+  } /* el fill para cambiar el color del svg es cuando esta dentro de un button u otro elemento... filter es cuando esta solo en el div.. aqui encuentro cada color https://codepen.io/sosuke/pen/Pjoqqp */
+
+footer .info2{
+    width: 33%;
+    padding: 12% 6% 0% 10%;
+    display: flex;
+}
+
+.info2 div {
+    margin: 14% 10% 6% 7%;
+}
+
+.info2 div a {
+    color: hsl(193, 100%, 96%);
+    text-decoration: none; /* para quitarle la linea de abajo a lis link*/
+    font-size: 18px ;
+    display: table;
+    margin-top: 10%;
+}
+
+.info2 div a:hover {
+    cursor: url("pointer.png"), auto;
+    text-decoration: underline;
+}
+
+
+footer .info3 {
+    width: 33%;
+    margin: 15% 3% 9% 7%;
+}
+
+ .info3 button{
+    width: 11%;
+    height: 21%;
+    margin-right: 5%;
+    background-color: hsl(192, 100%, 9%);
+    border-color: hsl(193, 100%, 96%);
+    border-style: solid ;
+    border-width: 0.02px; /* para el grosor del border */
+    color: hsl(193, 100%, 96%);
+    border-radius: 50%;
+}
+
+.info3 button:hover {
+    cursor: url("pointer.png"), auto;
+    color: hsl(322, 100%, 66%);
+    border-color: hsl(322, 100%, 66%);
+}
+
+
+aside p{
+    text-align: right;
+    color: hsl(193, 100%, 96%);
+    margin: -4% 6% 0% 0%;
+}
+
+
+@media (max-width: 400px ) { 
+    body {
+        width: 100vw;
+    }
+    header {
+        max-width: 100%; /*mejor colocar max-width.. con eso no me salgo del margen, pero primero diseñar todo el div con width del 100% luego si poner max width */
+        background-image: url("images/bg-hero-mobile.svg");
+        display: inline-block;
+        margin: 4% 6% 5% 6%;
+    }
+    
+    .logo img {
+        width: 30%;
+        height: 15px;
+    }
+    
+    .logo button {
+        width: 30%;
+        height: 20px;
+        font-size: 11px;
+        font-weight: 600;
+    }
+    
+    .heading {
+        display: inline-block;
+        margin: 4% 6% ;
+    }
+    
+    .heading .text {
+        width: 100%;
+        padding: 6% 0%;
+        font-weight: 600;
+        text-align: center;
+    }
+    
+     .text h1 {
+        font-size: 23px;
+    }
+    
+    .text p {
+        font-size: 14px;
+        font-weight: 400;
+    }
+    
+    .text button, nav button {
+        margin-top: 6%;
+        width: 80%;
+        height: 40px;
+        font-weight: 400;
+        font-size: 13px;
+    } /* agrupar siempre codigo similar y lo que cambia lo hago en otro selector*/
+    
+    .heading .headerimg {
+        width: 100%;
+        padding: 14% 0%;
+    }
+    
+    
+    main{
+        max-width: 100%;
+        margin: 4% 6%;
+    }
+    
+    main .fea1 , .fea2, .fea3{
+        width: 100%;
+        height: 30rem; /*emepzar a utilizar mas rem.. son mas responsive*/
+        display: inline-block;
+        margin-bottom: 3%;
+    } /* cuando vea que hay code que se parece... debo agruparlo... mas simple de leer*/
+    
+
+    
+    .fea1 .text1, .fea3 .text3{
+        width: 100%;
+        padding: 5% 6% 5% 6%;
+        text-align: center; 
+    }
+    
+    .text2 {
+        width: 100%;
+        padding: 5% 6% 5% 6%;
+    }
+    
+    .text1 h2, .text2 h2, .text3 h2 {
+        width: 85%;
+        font-size: 24px;
+        font-weight: 600;
+        text-align: center;
+        padding: 1% 6% 1% 1%;
+    }
+    
+    .text1 p, .text2 p, .text3 p {
+        width: 85%;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 2.4ch;
+        letter-spacing: 0.06ch;
+        text-align: center;
+        padding: 1% 6% 5% 1%;
+        font-size: 17px;
+    }
+    
+    .img1 img, .img3 img {
+        width: 80%;
+        padding: 13% 6% 1% 6%;
+    }
+    
+    .img2 img {
+        width: 80%;
+        padding: 15% 6% 3% 6%;
+    }
+    
+    nav {
+        margin: 30% 6% -20% 6%;
+        width: 90%;
+    } /* pongo el z index con mas valor donde quiero que se ponga encima mas margin bottom negativo para unir.. creo que debe ir con position relative */
+    
+    nav h2 {
+        margin-top: 15%;
+        font-size: 21px;
+        font-weight: 700;        
+    }
+    nav button {
+        width: 60%;
+        margin-bottom: 15%;
+        font-size: 12px;
+    }
+    
+    footer {
+        width: 100%;
+        margin: 0%;
+        display: inline-block;
+    }
+    
+    footer .info1 {
+        padding: 40% 1% 7% 6%;
+        width: 100%;
+    }
+    
+    .info1 article img {
+      position: absolute;
+    }
+    
+    .info1 article p {
+        width: 70%;
+        padding: 0% 1% 5% 9%;
+        font-size: 14px ;
+        line-height: 1.5;
+        letter-spacing: 0.14ch;
+        font-weight: 100;
+      }
+    
+      #svg{
+        width: 40%;
+        padding-bottom: 2%;
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(200deg) brightness(103%) contrast(101%);
+      } /* el fill para cambiar el color del svg es cuando esta dentro de un button u otro elemento... filter es cuando esta solo en el div.. aqui encuentro cada color https://codepen.io/sosuke/pen/Pjoqqp */
+    
+    footer .info2{
+        width: 33%;
+        padding: 0% 6% 0% 6%;
+        display: inline-block;
+    }
+    
+    .info2 div {
+        margin: 1% 10% 6% 2%;
+    }
+    
+    .info2 div a {
+        font-size: 16px ;
+        display: table;
+        margin-top: 10%;
+    }
+
+    footer .info3 {
+        width: 100%;
+        display: flex;
+        margin: 10% 6% 30% 2%;
+        justify-content: center;
+    }
+    
+     .info3 button{
+        width: 30px; /* el tamaño de los botones  si ponerlo en pixeles por que se distorciona mucho al cambiar tamaño de screen*/
+        height: 30px;
+        margin: 0% 3% 0% 0%;
+    }
+    
+    aside p{
+        text-align: center;
+        margin: -25% 0% 0% 0%;
+        font-size: 14px;
+    }
+}
+
+
